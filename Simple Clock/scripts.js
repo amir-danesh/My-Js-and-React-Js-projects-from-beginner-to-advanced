@@ -10,7 +10,8 @@ my_clock.prototype.run = function(){
 };
 my_clock.prototype.update = function (){
     this.updateTime(1);
-    console.log(this.hours + ":" + this.minutes + ":" + this.seconds);
+    var new_time = this.hours + ":" + this.minutes + ":" + this.seconds;
+    theclock.innerText = new_time;
 };
 my_clock.prototype.updateTime = function (secs){
     this.seconds += secs;
@@ -27,4 +28,5 @@ my_clock.prototype.updateTime = function (secs){
     }
 };
 var clock = new my_clock();
+var theclock = document.getElementById("clock");
 clock.run();
